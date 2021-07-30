@@ -21,9 +21,13 @@ export const App = () => {
       <div>
         <button
           onClick={() =>
-            setDogUrl(
-              'https://images.dog.ceo/breeds/hound-english/n02089973_1132.jpg',
-            )
+            fetch('https://dog.ceo/api/breeds/image/random')
+              .then(response => {
+                return response.json()
+              })
+              .then(data => {
+                setDogUrl(data.message)
+              })
           }
         >
           更新
