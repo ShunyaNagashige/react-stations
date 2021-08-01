@@ -15,24 +15,36 @@ export const App = () => {
 
   return (
     <div>
-      <header>Dog アプリ</header>
-      <div>犬の画像を表示するサイトです．</div>
-      <img src={dogUrl}></img>
-      <div>
-        <button
-          onClick={() =>
-            fetch('https://dog.ceo/api/breeds/image/random')
-              .then(response => {
-                return response.json()
-              })
-              .then(data => {
-                setDogUrl(data.message)
-              })
-          }
-        >
-          更新
-        </button>
+      <header>
+        <div className="title">Dog アプリ</div>
+      </header>
+
+      <div className="main flex-container">
+        <span className="site-desc flex-item">
+          犬の画像を表示するサイトです．
+        </span>
+        <div className="img-update-wrap flex-container flex-item">
+          <div className="img-wrap">
+            <img className="dog-img flex-item" src={dogUrl}></img>
+          </div>
+          <button
+            className="update-btn flex-item"
+            onClick={() =>
+              fetch('https://dog.ceo/api/breeds/image/random')
+                .then(response => {
+                  return response.json()
+                })
+                .then(data => {
+                  setDogUrl(data.message)
+                })
+            }
+          >
+            {' '}
+            更新
+          </button>
+        </div>
       </div>
+      <hr></hr>
     </div>
   )
 }
