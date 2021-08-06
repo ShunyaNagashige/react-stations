@@ -8,16 +8,20 @@ header {
   font-family: sans-serif;
 }
 
-@media screen and (min-width: 480px) and (max-width: 1200px) {
-  .flex-container {
-    display: flex;
-  }
+.flex-container {
+  display: flex;
 }
 
 .main {
   margin-top: 20px;
 }
-@media screen and (min-width: 480px) and (max-width: 1200px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   .main {
     flex-direction: row;
     justify-content: space-around;
@@ -25,7 +29,7 @@ header {
   }
 }
 
-@media screen and (min-width: 100px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   .site-desc {
     display: inline-block;
     margin-bottom: 20px;
@@ -33,6 +37,7 @@ header {
 }
 
 .img-update-wrap {
+  display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
@@ -66,3 +71,16 @@ header {
   color: #ffffff;
   border-radius: 10px;
 }
+
+/* 
+## React Railway Station7のクリア判定をしてほしい
+### 工夫した点
+- どんなサイズの画像でも，縦横300pxの枠内に収まるようにした．これにより，横幅が300pxより広いデバイスなら画像を画面内に収めることができ，見やすい．
+- 横幅が768px未満であれば，サイトの説明，画像，ボタンが縦に並ぶようにした．(レスポンシブデザイン)
+
+### 困っている点
+- 前述した768px未満の場合に，ボタンを画像の右下に配置することができない．(なお，768px以上の場合は，画像とボタンの親要素にalign-items: flex-endを記述することで実現している．)
+
+### 自分で調べたこと
+- 
+ */

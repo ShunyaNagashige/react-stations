@@ -23,9 +23,9 @@ export const App = () => {
         <span className="site-desc flex-item">
           犬の画像を表示するサイトです．
         </span>
-        <div className="img-update-wrap flex-container flex-item">
-          <div className="img-wrap">
-            <img className="dog-img flex-item" src={dogUrl}></img>
+        <div className="img-update-wrap flex-item">
+          <div className="img-wrap flex-item">
+            <img className="dog-img" src={dogUrl}></img>
           </div>
           <button
             className="update-btn flex-item"
