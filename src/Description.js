@@ -9,13 +9,13 @@ export const Description = props => {
 
   return (
     <div className="main flex-container">
-      <span className="site-desc flex-item">{props.siteDesc}</span>
-      <div className="img-update-wrap flex-item">
-        <div className="img-wrap flex-item">
+      <span className="site-desc">{props.siteDesc}</span>
+      <div className="img-update-wrap">
+        <div className="img-wrap">
           <DogImage url={dogUrl}></DogImage>
         </div>
         <button
-          className="update-btn flex-item"
+          className="update-btn"
           onClick={() =>
             fetch('https://dog.ceo/api/breeds/image/random')
               .then(response => {

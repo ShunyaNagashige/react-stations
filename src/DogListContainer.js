@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { useEffect, useState } from 'react'
 
 // DO NOT DELETE
@@ -20,5 +21,17 @@ export const DogListContainer = () => {
           setBreeds(dogList)
         }),
     [],
+  )
+
+  let optionList = []
+  breeds.map(value => optionList.push(<option>{value}</option>))
+
+  return (
+    <div class="breeds-list-wrap flex-container">
+      <span class="flex-item">Breeds List</span>
+      <select class="flex-item" name="breed">
+        {optionList}
+      </select>
+    </div>
   )
 }
