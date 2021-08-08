@@ -12,7 +12,7 @@ export const Description = props => {
       <span className="site-desc flex-item">{props.siteDesc}</span>
       <div className="img-update-wrap flex-item">
         <div className="img-wrap flex-item">
-          <DogImage dogUrl={dogUrl}></DogImage>
+          <DogImage url={dogUrl}></DogImage>
         </div>
         <button
           className="update-btn flex-item"
