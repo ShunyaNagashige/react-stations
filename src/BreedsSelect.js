@@ -22,7 +22,8 @@ export const BreedsSelect = props => {
         name="breed-select-box"
         onChange={event => {
           console.log(event.target.selectedOptions[0].text)
-          props.changeHandler(event.target.selectedOptions[0].texy)
+          so = event.target.selectedOptions[0].text
+          props.changeHandler(so)
         }}
       >
         {optionList}
