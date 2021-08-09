@@ -20,7 +20,7 @@ export const BreedsSelect = props => {
         className="flex-item"
         id="breed-select-box"
         name="breed-select-box"
-        onChange={props.onChange}
+        onChange={props.changeHandler}
       >
         {optionList}
       </select>
