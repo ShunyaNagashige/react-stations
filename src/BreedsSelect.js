@@ -5,7 +5,7 @@ export const BreedsSelect = props => {
   let optionList = []
   props.breeds.map(value => optionList.push(<option>{value}</option>))
 
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', () => {
     document
       .getElementById('breed-select-box')
       .addEventListener('change', props.onChange)
