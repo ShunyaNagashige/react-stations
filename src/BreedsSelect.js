@@ -5,16 +5,21 @@ export const BreedsSelect = props => {
   let optionList = []
   props.breeds.map(value => optionList.push(<option>{value}</option>))
 
-  document.addEventListener('DOMContentLoaded', () => {
-    document
-      .getElementById('breed-select-box')
-      .addEventListener('change', props.onChange)
-  })
+  //   document.addEventListener('DOMContentLoaded', () => {
+  //     document
+  //       .getElementById('breed-select-box')
+  //       .addEventListener('change', props.onChange)
+  //   })
 
   return (
     <div class="breeds-list-wrap flex-container">
       <span class="flex-item">Breeds List</span>
-      <select class="flex-item" id="breed-select-box" name="breed">
+      <select
+        class="flex-item"
+        id="breed-select-box"
+        name="breed"
+        onChange={props.onChange}
+      >
         {optionList}
       </select>
     </div>
