@@ -25,9 +25,6 @@ export const DogListContainer = () => {
   )
 
   const [selectedBreed, setSelectedBreed] = useState('')
-  const handleChange = e => {
-    setSelectedBreed(e.target.selectedOptions[0].text)
-  }
 
   return (
     <BreedsSelect
@@ -41,3 +38,7 @@ export const DogListContainer = () => {
     ></BreedsSelect>
   )
 }
+
+// コールバックを渡すか，stateとsetStateを渡すか．
+// 正直どっちでもいいとは思うけど，
+// station10の問題文でselectタグのvalueにselectedBreedを渡せとあるので，stateを渡す方を選んだ

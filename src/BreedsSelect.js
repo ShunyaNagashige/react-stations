@@ -11,12 +11,6 @@ export const BreedsSelect = props => {
     ),
   )
 
-  //   document.addEventListener('DOMContentLoaded', () => {
-  //     document
-  //       .getElementById('breed-select-box')
-  //       .addEventListener('change', props.onChange)
-  //   })
-
   return (
     <div className="breeds-list-wrap flex-container">
       <span className="flex-item">Breeds List</span>

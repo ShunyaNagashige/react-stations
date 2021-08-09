@@ -51,26 +51,10 @@ header {
   align-items: flex-end;
 }
 
-.img-wrap {
-  width: 350px;
-  height: 350px;
-  position: relative;
-  border-color: #504b4b;
-  border-width: 2px;
-  border-style: solid;
-  display: block;
-  margin-bottom: 20px;
-}
-
 .dog-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: auto;
-  width: auto;
-  max-height: 90%;
-  max-width: 90%;
+  width: 443px;
+  height: 268px;
+  object-fit: cover;
 }
 
 .update-btn {
