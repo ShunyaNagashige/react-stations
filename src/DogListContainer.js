@@ -27,18 +27,21 @@ export const DogListContainer = () => {
   const [selectedBreed, setSelectedBreed] = useState('')
 
   return (
-    <BreedsSelect
-      breeds={breeds}
-      selectedBreed={selectedBreed}
-      setSelectedBreed={setSelectedBreed}
-      //   onChange={e => {
-      //     // console.log(event.target.selectedOptions[0].label)
-      //     handleChange(e)
-      //   }}
-    ></BreedsSelect>
+    <div className="dog-list-container flex-container">
+      <BreedsSelect
+        breeds={breeds}
+        selectedBreed={selectedBreed}
+        setSelectedBreed={setSelectedBreed}
+      ></BreedsSelect>
+      <button className="show-btn">表示</button>
+    </div>
   )
 }
 
 // コールバックを渡すか，stateとsetStateを渡すか．
 // 正直どっちでもいいとは思うけど，
 // station10の問題文でselectタグのvalueにselectedBreedを渡せとあるので，stateを渡す方を選んだ
+//   onChange={e => {
+//     // console.log(event.target.selectedOptions[0].label)
+//     handleChange(e)
+//   }}

@@ -8,7 +8,7 @@ export const Description = props => {
   )
 
   return (
-    <div className="main flex-container">
+    <div className="description flex-container">
       <span className="site-desc">{props.siteDesc}</span>
       <div className="img-update-wrap">
         <div className="img-wrap">

@@ -13,7 +13,7 @@ export const BreedsSelect = props => {
 
   return (
     <div className="breeds-list-wrap flex-container">
-      <span className="flex-item">Breeds List</span>
+      <span className="breeds-list-label flex-item">Breeds List</span>
       <select
         className="flex-item"
         id="breed-select-box"
