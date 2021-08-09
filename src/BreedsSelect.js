@@ -3,7 +3,9 @@ import * as React from 'react'
 
 export const BreedsSelect = props => {
   let optionList = []
-  props.breeds.map(value => optionList.push(<option>{value}</option>))
+  props.breeds.map(value =>
+    optionList.push(<option key={value}>{value}</option>),
+  )
 
   //   document.addEventListener('DOMContentLoaded', () => {
   //     document
