@@ -20,6 +20,7 @@ export const BreedsSelect = props => {
         className="flex-item"
         id="breed-select-box"
         name="breed-select-box"
+        value={props.selectedBreed}
         onChange={e => {
           props.setSelectedBreed(e.target.selectedOptions[0].text)
         }}
