@@ -29,10 +29,8 @@ export const DogListContainer = () => {
   return (
     <BreedsSelect
       breeds={breeds}
-      onChange={() => {
-        setSelectedBreed(
-          document.getElementById('breed-select-box').selectedIndex,
-        )
+      onChange={event => {
+        setSelectedBreed(event.target.selectedOptions[0].label)
       }}
     ></BreedsSelect>
   )
