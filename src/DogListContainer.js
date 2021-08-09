@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
+import { BreedsSelect } from './BreedsSelect'
 
 // DO NOT DELETE
 export const DogListContainer = () => {
@@ -12,26 +13,25 @@ export const DogListContainer = () => {
           return response.json()
         })
         .then(data => {
-          let dogList = []
-          //   data['message'].map(dogList.push(key))
+          let breedList = []
+          //   setBreeds(Object.keys(data['message']))
           for (var key in data['message']) {
-            dogList.push(key)
+            breedList.push(key)
           }
 
-          setBreeds(dogList)
+          setBreeds(breedList)
         }),
     [],
   )
 
-  let optionList = []
-  breeds.map(value => optionList.push(<option>{value}</option>))
+  const [selectedBreed, setSelectedBreed] = useState('')
 
   return (
-    <div class="breeds-list-wrap flex-container">
-      <span class="flex-item">Breeds List</span>
-      <select class="flex-item" name="breed">
-        {optionList}
-      </select>
-    </div>
+    <BreedsSelect
+      breeds={breeds}
+      onClick={() => {
+        setSelectedBreed(document.getElementById('breed-select-box').value)
+      }}
+    ></BreedsSelect>
   )
 }
