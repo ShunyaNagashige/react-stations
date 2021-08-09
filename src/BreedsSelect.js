@@ -20,10 +20,8 @@ export const BreedsSelect = props => {
         className="flex-item"
         id="breed-select-box"
         name="breed-select-box"
-        onChange={event => {
-          //   console.log(event.target.selectedOptions[0].text)
-          //   so = event.target.selectedOptions[0].text
-          //   props.changeHandler(so)
+        onChange={e => {
+          props.changeHandler(e)
         }}
       >
         {optionList}

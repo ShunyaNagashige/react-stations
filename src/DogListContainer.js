@@ -29,9 +29,9 @@ export const DogListContainer = () => {
   return (
     <BreedsSelect
       breeds={breeds}
-      changeHandler={label => {
+      changeHandler={e => {
         // console.log(event.target.selectedOptions[0].label)
-        setSelectedBreed(label)
+        setSelectedBreed(e.target.selectedOptions[0].text)
       }}
     ></BreedsSelect>
   )
