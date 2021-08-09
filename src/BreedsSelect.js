@@ -7,7 +7,7 @@ export const BreedsSelect = props => {
 
   document
     .getElementById('breed-select-box')
-    .addEventListener('change', props.onClick)
+    .addEventListener('change', props.onChange)
 
   return (
     <div class="breeds-list-wrap flex-container">

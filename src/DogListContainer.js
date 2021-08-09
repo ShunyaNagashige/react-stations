@@ -29,7 +29,7 @@ export const DogListContainer = () => {
   return (
     <BreedsSelect
       breeds={breeds}
-      onClick={() => {
+      onChange={() => {
         setSelectedBreed(document.getElementById('breed-select-box').value)
       }}
     ></BreedsSelect>
