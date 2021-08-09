@@ -32,10 +32,12 @@ export const DogListContainer = () => {
   return (
     <BreedsSelect
       breeds={breeds}
-      onChange={e => {
-        // console.log(event.target.selectedOptions[0].label)
-        handleChange(e)
-      }}
+      selectedBreed={selectedBreed}
+      setSelectedBreed={setSelectedBreed}
+      //   onChange={e => {
+      //     // console.log(event.target.selectedOptions[0].label)
+      //     handleChange(e)
+      //   }}
     ></BreedsSelect>
   )
 }
