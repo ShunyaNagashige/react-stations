@@ -4,7 +4,11 @@ import * as React from 'react'
 export const BreedsSelect = props => {
   let optionList = []
   props.breeds.map(value =>
-    optionList.push(<option key={value}>{value}</option>),
+    optionList.push(
+      <option key={value} value={value}>
+        {value}
+      </option>,
+    ),
   )
 
   //   document.addEventListener('DOMContentLoaded', () => {
@@ -22,7 +26,7 @@ export const BreedsSelect = props => {
         name="breed-select-box"
         value={props.selectedBreed}
         onChange={e => {
-          props.setSelectedBreed(e.target.selectedOptions[0].text)
+          props.setSelectedBreed(e.target.value)
         }}
       >
         {optionList}
