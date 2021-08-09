@@ -22,7 +22,7 @@ export const BreedsSelect = props => {
         name="breed-select-box"
         onChange={event => {
           console.log(event.target.selectedOptions[0].label)
-          props.changeHandler(event.target.selectedOptions[0].label)
+          props.changeHandler(event.target.selectedOptions)
         }}
       >
         {optionList}
