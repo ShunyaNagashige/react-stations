@@ -12,10 +12,10 @@ export const BreedsSelect = props => {
   //   })
 
   return (
-    <div class="breeds-list-wrap flex-container">
-      <span class="flex-item">Breeds List</span>
+    <div className="breeds-list-wrap flex-container">
+      <span className="flex-item">Breeds List</span>
       <select
-        class="flex-item"
+        className="flex-item"
         id="breed-select-box"
         name="breed-select-box"
         onChange={props.onChange}
