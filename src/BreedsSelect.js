@@ -5,9 +5,11 @@ export const BreedsSelect = props => {
   let optionList = []
   props.breeds.map(value => optionList.push(<option>{value}</option>))
 
-  document
-    .getElementById('breed-select-box')
-    .addEventListener('change', props.onChange)
+  document.addEventListener('DOMContentLoaded', function () {
+    document
+      .getElementById('breed-select-box')
+      .addEventListener('change', props.onChange)
+  })
 
   return (
     <div class="breeds-list-wrap flex-container">
