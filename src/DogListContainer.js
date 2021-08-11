@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { BreedsSelect } from './BreedsSelect'
+import { DogImageList } from './DogImageList'
 
 // DO NOT DELETE
 export const DogListContainer = () => {
@@ -13,27 +14,39 @@ export const DogListContainer = () => {
           return response.json()
         })
         .then(data => {
-          let breedList = []
-          //   setBreeds(Object.keys(data['message']))
-          for (var key in data['message']) {
-            breedList.push(key)
-          }
-
-          setBreeds(breedList)
+          setBreeds(Object.keys(data['message']))
         }),
     [],
   )
 
-  const [selectedBreed, setSelectedBreed] = useState('')
+  const [selectedBreed, setSelectedBreed] = useState('affenpinscher')
+
+  const [dogUrlList, setDogUrlList] = useState([])
+
+  let handleClick = () => {
+    fetch('https://dog.ceo/api/breed/' + selectedBreed + '/images/random/12')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setDogUrlList(data.message)
+        console.log(dogUrlList)
+      })
+  }
 
   return (
-    <div className="dog-list-container flex-container">
-      <BreedsSelect
-        breeds={breeds}
-        selectedBreed={selectedBreed}
-        setSelectedBreed={setSelectedBreed}
-      ></BreedsSelect>
-      <button className="show-btn">表示</button>
+    <div className="dog-list-container">
+      <div className="select-box-show-btn-wrap flex-container">
+        <BreedsSelect
+          breeds={breeds}
+          selectedBreed={selectedBreed}
+          setSelectedBreed={setSelectedBreed}
+        ></BreedsSelect>
+        <button className="show-btn" onClick={handleClick}>
+          表示
+        </button>
+      </div>
+      <DogImageList dogUrlList={dogUrlList}></DogImageList>
     </div>
   )
 }
